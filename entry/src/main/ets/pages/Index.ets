@@ -7,11 +7,15 @@ class Animal {
     this.name = name;
     this.sound = sound;
   }
+
+  getSound(): string {
+    return this.sound ?? '无声音';
+  }
 }
 
 let myAnimal: Animal = new Animal('Kitty', 'Meow');
 console.log('姓名:', myAnimal.name.length);
-console.log('声音:', myAnimal.sound?.length);
+console.log('声音:', myAnimal.getSound().length);
 
 
 ///////////////////////////////////////////////////////////////
@@ -116,10 +120,7 @@ student1.sayHi();
 student1.study();
 
 //实例化和类型检查
-class Person {}
-class Student extends Person {}
-
-let student: Student = new Student();
+let student: Student = new Student('John', 20, '10th');
 console.log('Is student an instance of Student:', student instanceof Student);
 console.log('Is student an instance of Person:', student instanceof Person);
 
