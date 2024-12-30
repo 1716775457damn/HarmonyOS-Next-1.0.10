@@ -1,3 +1,37 @@
+@Entry
+@Component
+struct Index {
+  build() {
+    Column() {
+      Text('类的学习示例')
+        .fontSize(24)
+        .margin(20)
+
+      // 测试 Animal 类
+      Button() {
+        Text('测试 Animal')
+      }
+      .onClick(() => {
+        let myAnimal: Animal = new Animal('Kitty', 'Meow');
+        console.log('姓名:', myAnimal.name.length);
+        console.log('声音:', myAnimal.getSound().length);
+      })
+
+      // 测试 Student 类
+      Button() {
+        Text('测试 Student')
+      }
+      .onClick(() => {
+        let student: Student = new Student('John', 20, '10th');
+        student.sayHi();
+        student.study();
+      })
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
+
 //定义和实例化类
 class Animal {
   name: string = 'DefaultName';
